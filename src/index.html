@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="js/productionRule/ProductionRule.js" defer></script>
+    <script src="js/grammar/Grammar.js" defer></script>
+    <script src="js/functions/main.js" defer></script>
+    <script src="js/syntaxAnalyser/SyntaxAnalyser.js" defer></script>
+
+    <title>Document</title>
+</head>
+<body>
+        <!-- HEADER -->
+    <header class="banner">
+        <h2>Word Wizard</h2>
+        <p>L'analyseur syntaxique pour reconnaître les mots d'un langage algébrique donné !</p>
+        <p>Word Wizard est une plateforme en ligne pour tester l'appartenance des mots à un langage engendré par une grammaire.</p>
+        <p>Les règles de productions doivent être de la forme <strong>A->B"C"D</strong> et séparées par des points virgule. Ici, 
+        <strong>A</strong> représente la partie <br> gauche de la règle de production; <strong>B</strong> représente 
+        la partie droite de la règle de production; <strong>C</strong> est une chaine de caractères <br>
+        obtenue par concatenation de tous les symboles terminaux de la règle de production tandis que <strong>D</strong>
+        est une chaine de <br> caractères obtenue par concatenation de tous les symboles non terminaux de la règle de production. <br>
+        Le mot vide est représenté par le caractère <strong>ε</strong>. Les symboles terminaux seront représentés par des <br> lettres minuscules et les 
+        symboles non terminaux par des lettres majuscules.</p>
+    </header>    
+
+         <!-- MAIN -->
+    <main>
+
+        <!-- la div portant la classe zoneSaisie représente la zone de toutes les saisies
+        notamment, la saisie de la grammaire, la saisie du mot à reconnaître et la saisie de l'axiome -->
+        <div class="zoneSaisie">
+
+            <!-- la div portant la classe grammarZone représente la zone de saisie de la grammaire -->
+            <div>
+                <p>Bien vouloir entrer votre grammaire.</p>
+                <div class="grammarZone">
+                    <input type="text" id="inputGrammar" name="inputGrammar" placeholder='S->TA""ATS;A->+TA|ε"+"AT;T->FB""TFB;B->*FB|ε"*"FB;F->(S)|a"()a"FS'>
+                    <!--  <button id="btnValiderGrammar">Valider</button> -->
+                </div>
+            </div>
+            
+            <!-- la div portant la classe grammarZone représente la zone de saisie de la grammaire -->
+            <div>
+                <p>Bien vouloir entrer le mot à reconnaître. </p>
+                <div class="wordZone">
+                    <input type="text" id="inputWord" name="inputWord" placeholder="a+a*a">
+                    <!-- <button id="btnValiderWord">Valider</button> -->
+                    <button id="btnValider">Valider</button>
+                </div>
+            </div>
+
+            <!-- la div portant la classe grammarZone représente la zone de saisie de la grammaire -->
+            <div>
+                <p>Bien vouloir entrer l'axiome.</p>
+                <div class="axiomZone">
+                    <input type="text" id="inputAxiom" name="inputAxiom" placeholder="S">
+                    <!-- <button id="btnValiderAxiom">Valider</button> -->
+                </div>
+            </div>    
+        </div>
+        <div class="zoneResultat">
+            <div class="inside">
+                <input type="text" id="inside" name="inside">
+            </div>
+            <div class="grammarResponse">
+                <p>Les règles de production utilisées pour y arriver sont les suivantes</p>
+                <textarea name="derivation" id="derivation" cols="30" rows="10"></textarea>
+            </div>
+        </div>   
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        @Copyright : Groupe 10.
+    </footer>
+ 
+    
+</body>
+</html>
