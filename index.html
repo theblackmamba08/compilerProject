@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Word Wizard — analyseur LL(1)</title>
+    <meta
+      name="description"
+      content="Testez une grammaire LL(1) : ensembles PREMIER et SUIVANT, table d’analyse, conflits et analyse pas à pas d’un mot."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#results" data-i18n="skip">Aller aux résultats</a>
+
+    <header class="masthead">
+      <div class="masthead__text">
+        <h1 data-i18n="heading">Word Wizard</h1>
+        <p class="masthead__intro" data-i18n="intro"></p>
+      </div>
+      <button id="lang-switch" class="button button--quiet" type="button"></button>
+    </header>
+
+    <main class="workspace">
+      <form id="form" class="controls" novalidate>
+        <fieldset class="controls__group">
+          <legend data-i18n="grammarLegend"></legend>
+
+          <div class="field">
+            <label for="example" data-i18n="example"></label>
+            <select id="example"></select>
+          </div>
+
+          <div class="field">
+            <label for="grammar" data-i18n="grammarLabel"></label>
+            <textarea
+              id="grammar"
+              class="code-input"
+              rows="7"
+              spellcheck="false"
+              autocomplete="off"
+              autocapitalize="off"
+              aria-describedby="grammar-help grammar-errors"
+            ></textarea>
+            <div class="tools">
+              <button class="button button--small" type="button" data-insert="ε" data-i18n="insertEpsilon"></button>
+              <button class="button button--small" type="button" data-insert=" → " data-i18n="insertArrow"></button>
+            </div>
+            <p id="grammar-help" class="help" data-i18n="grammarHelp"></p>
+            <ul id="grammar-errors" class="errors"></ul>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="start" data-i18n="startLabel"></label>
+          <select id="start"></select>
+        </div>
+
+        <div class="field">
+          <label for="word" data-i18n="wordLabel"></label>
+          <input
+            id="word"
+            class="code-input"
+            type="text"
+            spellcheck="false"
+            autocomplete="off"
+            autocapitalize="off"
+            aria-describedby="word-help"
+          />
+          <p id="word-help" class="help" data-i18n="wordHelp"></p>
+        </div>
+      </form>
+
+      <section id="results" class="results" tabindex="-1">
+        <p id="verdict" class="verdict" role="status" aria-live="polite"></p>
+        <div id="report" class="report"></div>
+      </section>
+    </main>
+
+    <footer class="colophon">
+      <p>
+        <span data-i18n="footerCredit"></span>
+        <a href="https://cabrelfosso.com">Cabrel FOSSO</a>.
+        <a href="https://github.com/theblackmamba08/compilerProject" data-i18n="footerSource"></a>
+      </p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
