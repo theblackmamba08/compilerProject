@@ -4,7 +4,7 @@
 
 Word Wizard teste une grammaire algébrique et analyse un mot par la méthode **LL(1)** (analyse descendante prédictive). L'outil montre chaque étape : les ensembles PREMIER et SUIVANT, la table d'analyse, les éventuels conflits et l'analyse pas à pas du mot avec sa pile.
 
-**Démo en ligne** : https://theblackmamba08.github.io/compilerProject/
+**Démo en ligne** : https://wordwizard.cabrelfosso.com/ (miroir : https://theblackmamba08.github.io/compilerProject/)
 
 ## Écrire une grammaire
 
@@ -52,7 +52,7 @@ Organisation :
 - `src/ui/` : l'interface (textes FR/EN, rendu des tableaux) ;
 - `tests/` : tests Vitest, dont des valeurs de référence (grammaire des expressions) et la non-régression des bugs de 2023.
 
-Le site est publié sur GitHub Pages par `.github/workflows/deploy.yml` à chaque envoi sur `main`.
+Le site est publié à chaque envoi sur `main` à deux adresses : `wordwizard.cabrelfosso.com`, par Cloudflare Pages (commande `npm run build`, dossier `dist`), et le miroir GitHub Pages, par `.github/workflows/deploy.yml` (chemin de base `/compilerProject/`, réglé par la variable `BASE_PATH`). Le miroir existe parce que certains réseaux, dont MTN Cameroun en novembre 2026, n'atteignent pas GitHub Pages.
 
 ## Historique
 
@@ -74,7 +74,7 @@ MIT, voir [LICENSE](LICENSE).
 
 Word Wizard checks a context-free grammar and parses a word with the **LL(1)** method (predictive top-down parsing). It shows every step: FIRST and FOLLOW sets, the parsing table, any conflicts, and a step-by-step parse with its stack.
 
-**Live demo**: https://theblackmamba08.github.io/compilerProject/
+**Live demo**: https://wordwizard.cabrelfosso.com/ (mirror: https://theblackmamba08.github.io/compilerProject/)
 
 ## Writing a grammar
 

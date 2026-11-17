@@ -1,4 +1,5 @@
-# Publie le site sur GitHub Pages à chaque envoi sur main.
+# Publie le miroir GitHub Pages à chaque envoi sur main.
+# L'adresse principale (https://wordwizard.cabrelfosso.com/) est publiée par Cloudflare Pages.
 # D'après le guide officiel de Vite : https://vite.dev/guide/static-deploy (section GitHub Pages).
 # Prérequis : Settings > Pages > Source = « GitHub Actions ».
 name: Deploy to GitHub Pages
@@ -30,7 +31,10 @@ jobs:
           node-version: lts/*
           cache: npm
       - run: npm ci
+      # Miroir GitHub Pages : le site est servi sous /compilerProject/.
       - run: npm run check
+        env:
+          BASE_PATH: /compilerProject/
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
